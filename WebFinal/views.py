@@ -33,10 +33,11 @@ class StaffRequiredMixin(object):
         return super(StaffRequiredMixin, self).dispatch(request, *args, **kwargs)
 
 def inicio(request):
-
-    avatar = Avatar.objects.get(user=request.user)
-
-    return render(request, 'inicio2.html', {'url': avatar.imagen.url})
+    try:
+        avatar = Avatar.objects.get(user=request.user)
+        return render(request, 'inicio2.html', {'url': avatar.imagen.url})
+    except:
+       return render(request, 'inicio2.html')
 
 # def form_cliente(request):
 
