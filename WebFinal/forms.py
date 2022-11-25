@@ -38,7 +38,7 @@ class Formulario_productos(forms.ModelForm):
     # medidas = forms.CharField(max_length=30)
     class Meta:
         model = Productos
-        fields = ("modelo","genero","medidas")
+        fields = ("codigo", "modelo","genero","medidas","imagen")
 
 class Formulario_ventas(forms.ModelForm):
 

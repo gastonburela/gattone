@@ -424,7 +424,8 @@ def userlogin(request):
         formulario = AuthenticationForm()
 
         return render(request, 'login.html', {'formulario': formulario})
-    
+
+@method_decorator(staff_member_required)    
 def registrar_user(request):
 
     if request.method == 'POST':

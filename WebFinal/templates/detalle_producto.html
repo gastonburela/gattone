@@ -4,11 +4,17 @@
 
 {% block secciones %}
 
-<h2>Características del Producto seleecionado:</h2>
-
+<h2>Características del Producto seleccionado:</h2>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;codigo: {{producto.codigo}}</br>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;Modelo: {{producto.modelo}}</br>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;Genero: {{producto.genero}}</br>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;Medidas: {{producto.medidas}}</br>
+<div>
+    {% if producto.imagen %}
+    <img src= "{{producto.imagen.url}}" alt="imagen" class="imagen-thumbnail"
+    {% endif %}
+</div>
+
 
 <br>&nbsp;&nbsp;&nbsp;&nbsp;<button>
     <a href="{% url 'lista_productos'  %}" >Volver</a>
