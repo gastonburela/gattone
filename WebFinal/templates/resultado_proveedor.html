@@ -1,0 +1,30 @@
+
+
+{% load static %}
+
+{% block secciones %}
+
+    {% if object_list %}
+
+        {% for proveedor in object_list %}
+        <ul>
+       
+            <li> 
+                
+                <h4>Nombre: {{proveedor.nombre}}<br/> Tipo: {{proveedor.tipo}}<br/> Telefono: {{proveedor.telefono}}<br/> Dirección: {{proveedor.direccion}}<br/></h4>
+            </li>
+            
+        {% endfor %} 
+        </ul>
+        
+    {% else %}
+        <h4>Proveedor no encontrado</h4>
+    
+    {% endif %}
+
+    <button><a href="{% url 'busqueda_proveedor'  %}" >Volver a buscar</a><br></button>
+    <button><a href="{% url 'lista_proveedores'  %}" >Volver a Proveedores</a></button>
+        
+
+
+{% endblock %}

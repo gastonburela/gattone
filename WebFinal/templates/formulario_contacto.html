@@ -1,0 +1,33 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<h1>Contactenos</h1>
+
+<form action="{% url 'contactenos' %}" method="POST">{% csrf_token %}
+ 
+        <p>Asunto:<input type="text" name="asunto"></p>
+        <p>Email:<input type="text" name="email"></p>
+        <p>  
+            Mensaje:
+            <textarea name="mensaje" rows="5" cols="30" style="resize: none;" ></textarea>
+        </p>
+        <input type="submit"value="Enviar Consulta"/>
+    </form>
+
+{% endblock %}
+
+
+
+
+    <body>
+        
+
+
+
+
+    </body>     
+
+</html>

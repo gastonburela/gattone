@@ -1,0 +1,18 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<form action="{% url 'crear_proveedor' %}" method="POST">{% csrf_token %}
+
+    {{form.as_p}}
+
+    <input type="submit" value='Crear'/>
+    
+
+
+
+</form>
+
+{% endblock %}

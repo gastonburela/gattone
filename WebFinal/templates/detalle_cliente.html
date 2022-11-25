@@ -1,0 +1,46 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<h2>Detalle del cliente:</h2>
+
+<div class="container">
+    <div class="row">
+      <div class="col-1">
+     <b>Nombre:</b> 
+      </div>
+      <div class="col-1">
+      {{cliente.nombre}}
+      </div>
+      <div class="row">
+        <div class="col-1">
+        <b>Apellido:</b> 
+        </div>
+        <div class="col-1">
+        {{cliente.apellido}}
+        </div>
+        <div class="row">
+            <div class="col-1">
+            <b>Telefono:</b> 
+            </div>
+            <div class="col-1">
+            {{cliente.telefono}}
+            </div>
+            <div class="row">
+              <div class="col-1">
+                <b>Direccion:</b>
+              </div>
+              <div class="col-5">
+              &nbsp;{{cliente.direccion}}
+              </div>        
+  </div>
+</div>
+<div>
+</br><a class="btn btn-primary btn-sm" href="{% url 'lista_clientes'  %}" >Volver</a>
+</div>
+
+
+{% endblock %}
+

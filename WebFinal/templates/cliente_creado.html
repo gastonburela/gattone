@@ -1,0 +1,12 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+{{mensaje}}
+
+<a href="{% url 'form_cliente' %}">Crear nuevo cliente</a>
+
+
+{% endblock %}

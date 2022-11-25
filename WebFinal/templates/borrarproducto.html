@@ -1,0 +1,16 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+        
+<form method="POST">{% csrf_token %}
+
+    
+    <center><p>Seguro desea eliminar este Producto?</p>
+    <a type="submit"class="btn btn-success btn-sm">Confirmar</a>
+    <a class="btn btn-secondary btn-sm"href="{% url 'lista_productos' %}">Cancelar</a>
+
+</form>
+
+{% endblock %}

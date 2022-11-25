@@ -1,0 +1,19 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<center><form action="{% url 'Registro' %}" method="POST">{% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <input type="submit" value='Crear Usuario'/>
+    
+
+
+
+</form>
+</center>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+
+{% block secciones %}
+
+
+    {% if object_list %}
+
+        {% for cliente in object_list %}
+
+    <ul>
+       
+            <li>
+                <h4>Nombre: {{cliente.nombre}}<br/> Apellido: {{ cliente.apellido}}<br/> DNI: {{cliente.dni}}<br/> Telefono: {{cliente.telefono}}<br/> Dirección: {{cliente.direccion}}</h4>
+            </li>
+        {% endfor %}
+            
+    </ul>
+
+    {% else %}
+    
+        <h4>Cliente no encontrado</h4>
+    
+    {% endif %}
+    
+    
+    <button><a href="{% url 'busqueda_cliente'  %}" >Volver a buscar</a><br></button>
+    <button><a href="{% url 'lista_clientes'  %}" >Volver a clientes</a></button>
+
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<h2>Datos del Empleado:</h2>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Nombre: {{empleado.nombre}}</br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Apellido: {{empleado.apellido}}</br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Area: {{empleado.area}}</br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Cargo: {{empleado.cargo}}</br>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<button>
+    <a href="{% url 'lista_empleados'  %}" >Volver</a>
+</button>
+
+
+{% endblock %}

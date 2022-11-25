@@ -1,0 +1,37 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<a class="btn btn-info"href="{% url 'crear_proveedor' %}">Alta Nuevo Proveedor</a>
+
+    <a class= "btn btn-warning" href="{% url 'busqueda_proveedor' %}" >Buscar Proveedor</a>
+
+    <h1> 
+        
+        Lista de Proveedores: </h1>
+
+    <ul>
+
+        {% for proveedor in proveedores %}
+        <li>
+            <a href="{% url 'detalle_proveedor' proveedor.id %}">
+
+            {{proveedor}}
+
+            </a>
+        </li>
+        <div>
+        
+                <a class="btn btn-danger" href="{% url 'borraproveedor' proveedor.id %}">Eliminar</a>
+
+                <a class= "btn btn-light" href="{% url 'proveedorupdate' proveedor.id %}">Modificar</a>
+            
+        </div>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<h2>Características del Producto seleecionado:</h2>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Modelo: {{producto.modelo}}</br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Genero: {{producto.genero}}</br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Medidas: {{producto.medidas}}</br>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<button>
+    <a href="{% url 'lista_productos'  %}" >Volver</a>
+</button>
+
+
+{% endblock %}

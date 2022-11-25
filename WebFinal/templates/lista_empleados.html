@@ -1,0 +1,38 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+ 
+
+    <a class="btn btn-primary" href="{% url 'crea_empleado' %}" >Alta Nuevo Empleado</a>
+    <a class= "btn btn-dark" href="{% url 'busqueda_empleado' %}" >Buscar Empleado</a>
+    
+    <h1> 
+        
+        Lista de Empleados Activos: </h1>
+
+    <ul>
+
+        {% for empleado in empleados %}
+        <li>
+            <a href="{% url 'detalle_empleado' empleado.id %}">
+
+            {{empleado}}
+
+            </a>
+        </li>
+        <div>
+        
+            <a class= "btn btn-danger btn-sm" href="{% url 'borraempleado' empleado.id %}">Eliminar</a>
+            
+                <a class= "btn btn-secondary btn-sm" href="{% url 'empleadoupdate' empleado.id %}">Modificar</a>
+            </button>
+        </div>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

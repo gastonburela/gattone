@@ -1,0 +1,39 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<a class="btn btn-success" href="{% url 'form_cliente' %}">Crear Cliente</a>
+
+
+<a class="btn btn-primary" href="{% url 'busqueda_cliente' %}">Buscar Cliente</a>
+
+    
+    <h1> 
+        
+        Lista de Clientes: </h1>
+
+    <ul>
+
+        {% for cliente in clientes %}
+        <li>
+            <a href="{% url 'detalle_cliente' cliente.id %}">
+
+            {{cliente}}
+
+            </a>
+        </li>
+        <div>
+            <a class="btn btn-danger btn-sm" href="{% url 'borracliente' cliente.id %}">Eliminar</a>
+           
+            <a class="btn btn-secondary btn-sm" href="{% url 'clienteupdate' cliente.id %}">Modificar</a>
+
+        
+        </div>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

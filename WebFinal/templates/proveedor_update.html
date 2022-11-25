@@ -1,0 +1,16 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+        
+    <form method="POST">{% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" class= "btn btn-success btn-sm" value="Actualizar Datos"/>
+        <a class= "btn btn-secondary btn-sm" href="{% url 'lista_proveedores' %}">Cancelar</a>
+
+    </form>
+   
+{% endblock %}

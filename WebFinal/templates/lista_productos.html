@@ -1,0 +1,41 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+{% if user.is_authenticated %}
+
+<a class= "btn btn-success" href="{% url 'crear_producto' %}" > Alta Nuevo Producto</a>
+<a class= "btn btn-secondary" href="{% url 'busqueda_producto' %}" >Buscar Producto</a>
+
+{% endif %}
+    <h1> 
+        
+    <center>Este es nuestro catálogo de productos. Elegí el tuyo!!</center></h1></br>
+
+    <ul>
+
+        {% for producto in productos %}
+        <li>
+            <a href="{% url 'detalle_producto' producto.id %}">
+
+            {{producto}}
+
+            </a>
+        </li>
+        <div>
+            {% if user.is_authenticated %}
+                <a class= "btn btn-danger"href="{% url 'borraproducto' producto.id %}">Eliminar</a>
+            
+        
+                <a class= "btn btn-warning" href="{% url 'productoupdate' producto.id %}">Modificar</a>
+            
+            {% endif %}
+        </div>
+
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

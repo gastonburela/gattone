@@ -1,0 +1,30 @@
+
+
+{% load static %}
+
+{% block secciones %}
+
+    {% if object_list %}
+
+        {% for empleado in object_list %} 
+
+            <ul>
+                <br/><li>
+                <h4>Nombre: {{empleado.nombre}}<br/> Apellido: {{empleado.apellido}}<br/> Area: {{empleado.area}}<br/> Cargo: {{empleado.cargo}}<br/></h4>
+                </li>
+        {% endfor %} 
+
+            </ul>
+
+    {% else %} 
+        <h4>{{response}}</h4>
+
+    {% endif %}
+
+
+    <button><a href="{% url 'busqueda_empleado'  %}" >Volver a buscar</a><br></button>
+    <button><a href="{% url 'lista_empleados'  %}" >Volver a Empleados</a></button>
+
+
+
+{% endblock %}

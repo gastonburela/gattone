@@ -1,0 +1,17 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<form action="{% url 'buscarproducto' %}" method="GET">{% csrf_token %}
+
+        <p>Ingrese modelo del Producto <input type="text" name="modelo"/> </p>
+
+        <input type="submit" class="btn btn-warning" value="Buscar Producto">
+
+        {% include 'resultado_producto.html' %}
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+
+<form action="{% url 'buscarempleado' %}" method="GET">{% csrf_token %}
+
+    <p>Ingrese apellido del Empleado <input type="text" name="apellido"/> </p>
+
+    <input type="submit" class= "btn btn-warning" value="Buscar Empleado">
+
+    {% include 'resultado_empleado.html' %}
+
+</form>
+
+{% endblock %}
