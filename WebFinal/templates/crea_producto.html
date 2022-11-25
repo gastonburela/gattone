@@ -4,12 +4,13 @@
 
 {% block secciones %}
 
-<form action="{% url 'crear_producto' %}" method="POST">{% csrf_token %}
+<form action="{% url 'crear_producto' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
     {{form.as_p}}
 
     <input type="submit" value='Crear'/>
     
+
 
 
 

@@ -38,6 +38,7 @@ class Productos(models.Model):
     modelo = models.CharField(max_length=30)
     genero = models.CharField(max_length=30)
     medidas = models.CharField(max_length=30)
+    imagen = models.ImageField(null=True, blank= True, upload_to="images/")
     
     def __str__(self):
         return f'Modelo: {self.modelo}'
@@ -52,7 +53,7 @@ class Ventas(models.Model):
 #Avatares
 class Avatar(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    imagen = models.ImageField(upload_to='avatares', null=True, blank=True)
+    imagen = models.ImageField(upload_to='avatares/', null=True, blank=True)
 
     def __str__(self):
         return f'{self.user} - {self.imagen}'
