@@ -7,8 +7,8 @@
 <form method="POST">{% csrf_token %}
 
     
-    <center><p>Seguro desea eliminar este Cliente?</p>
-    <a class= "btn btn-success btn-sm" type="submit">Confirmar</a>
+    <p>Seguro desea eliminar este Cliente?</p>
+    <button class = "btn btn-success" type="submit">Confirmar</button>
     <a class = "btn btn-secondary btn-sm" href="{% url 'lista_clientes' %}">Cancelar</a>
 
 </form>

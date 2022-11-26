@@ -38,7 +38,7 @@ class Productos(models.Model):
     modelo = models.CharField(max_length=30)
     genero = models.CharField(max_length=30)
     medidas = models.CharField(max_length=30)
-    imagen = models.ImageField(null=True, blank= True, upload_to="images/")
+    imagen = models.ImageField(null=True, blank= True, upload_to="images/",default="images/sin_imagen.jpg")
     
     def __str__(self):
         return f'Modelo: {self.modelo}'

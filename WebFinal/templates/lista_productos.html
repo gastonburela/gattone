@@ -12,18 +12,22 @@
 {% endif %}
     <h1> 
         
-    <center>Este es nuestro catálogo de productos. Elegí el tuyo!!</center></h1></br>
+    <center>Este es nuestro catálogo de productos. Elegí el tuyo!!</h1></center></br>
 
     <ul>
 
         {% for producto in productos %}
-        <li>
+        
             <a href="{% url 'detalle_producto' producto.id %}">
 
-            {{producto}}
-
+            <center><h3>{{producto}}</h3></center>
+            <div>
+            <center>{% if producto.imagen %}
+            <center><img src= "{{producto.imagen.url}}" alt="imagen" class="img-fluid"></center>
+            {% endif %}
+            </div>
             </a>
-        </li>
+        
         <div>
             {% if user.is_authenticated %}
                 <a class= "btn btn-danger"href="{% url 'borraproducto' producto.id %}">Eliminar</a>
