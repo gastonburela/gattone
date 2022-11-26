@@ -30,6 +30,7 @@ from WebFinal.forms import *
 class StaffRequiredMixin(object):
     @method_decorator(staff_member_required)
     def dispatch(self, request, *args, **kwargs):
+        
         return super(StaffRequiredMixin, self).dispatch(request, *args, **kwargs)
 
 def inicio(request):
@@ -96,8 +97,9 @@ class CrearCliente(LoginRequiredMixin, CreateView):
 #     return render(request, "lista_clientes.html", {"clientes": clientes})
 
 def creado_con_exito(request):
+    avatar = Avatar.objects.get(user=request.user) 
 
-    return render(request,'crear_exito.html')
+    return render(request,'crear_exito.html' ,{'url': avatar.imagen.url})
 
 class Mostrar_clientes(LoginRequiredMixin, ListView):
 
@@ -131,8 +133,8 @@ class EditarCliente(LoginRequiredMixin, UpdateView):
     success_url = '/WebFinal/exito_update/'
 
 def cliente_actualizado(request):
-
-    return render(request,'exito_update.html')
+    avatar = Avatar.objects.get(user=request.user)
+    return render(request,'exito_update.html', {'url': avatar.imagen.url})
 
 class Borracliente(LoginRequiredMixin, DeleteView):
 
@@ -141,8 +143,8 @@ class Borracliente(LoginRequiredMixin, DeleteView):
         success_url = '/WebFinal/lista_clientes'
 #BUSQUEDA
 def busqueda_cliente(request):
-    
-    return render(request, 'busqueda_cliente.html')
+    avatar = Avatar.objects.get(user=request.user)
+    return render(request, 'busqueda_cliente.html', {'url': avatar.imagen.url})
 
 class BuscaCliente(LoginRequiredMixin, ListView):
     model = Cliente
@@ -208,8 +210,8 @@ class Empleados(StaffRequiredMixin, CreateView):
 
 
 def empleado_creado(request):
-
-    return render(request, 'exito_empleado.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'exito_empleado.html' ,{'url': avatar.imagen.url})
 
 class MostrarEmpleados(StaffRequiredMixin, ListView):
 
@@ -238,13 +240,13 @@ class EditarEmpleado(StaffRequiredMixin, UpdateView):
     success_url = '/WebFinal/exito_update_empleado/'
 
 def empleado_actualizado(request):
-
-    return render(request, 'exito_update_empleado.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'exito_update_empleado.html',{'url': avatar.imagen.url})
 
 #BUSQUEDA
 def busqueda_empleado(request):
-    
-    return render(request, 'busqueda_empleado.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'busqueda_empleado.html', {'url': avatar.imagen.url})
 
 class BuscarEmpleado(StaffRequiredMixin, ListView):
     model = Empleado
@@ -269,11 +271,11 @@ class CrearProducto(LoginRequiredMixin, CreateView):
     success_url = '/WebFinal/exito_producto/'
 
 def productocreado(request):
-
-    return render(request, 'exito_producto.html')
+    avatar = Avatar.objects.get(user=request.user)
+    return render(request, 'exito_producto.html', {'url': avatar.imagen.url})
 
 class ListaProductos(ListView):
-
+    
     model = Productos
     form_class = Formulario_productos
     template_name = 'lista_productos.html'
@@ -299,13 +301,13 @@ class EditarProducto(LoginRequiredMixin, UpdateView):
     success_url = '/WebFinal/exito_update_producto/'
 
 def producto_actualizado(request):
-
-    return render(request, 'exito_update_producto.html')
+    avatar = Avatar.objects.get(user=request.user)
+    return render(request, 'exito_update_producto.html', {'url': avatar.imagen.url})
 
 #BUSQUEDA
 def busqueda_producto(request):
-    
-    return render(request, 'busqueda_producto.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'busqueda_producto.html', {'url': avatar.imagen.url})
 
 class BuscarProducto(ListView):
     model = Productos
@@ -334,15 +336,18 @@ class CrearProveedor(LoginRequiredMixin, CreateView):
     success_url = '/WebFinal/exito_proveedor/'
 
 def proveedorcreado(request):
-
-    return render(request, 'exito_proveedor.html')
+    avatar = Avatar.objects.get(user=request.user)
+    return render(request, 'exito_proveedor.html', {'url': avatar.imagen.url})
 
 class ListaProveedores(LoginRequiredMixin, ListView):
+     
 
     model = Proveedores
     form_class = Formulario_proveedores
     template_name = 'lista_proveedores.html'
     context_object_name = "proveedores"
+
+    
 
 class Detalle_Proveedor(LoginRequiredMixin, DetailView):
 
@@ -364,14 +369,14 @@ class EditarProveedor(LoginRequiredMixin, UpdateView):
     success_url = '/WebFinal/exito_update_proveedor/'
 
 def proveedor_actualizado(request):
-
-    return render(request, 'exito_update_proveedor.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'exito_update_proveedor.html', {'url': avatar.imagen.url})
 
 
 #BUSQUEDA
 def busqueda_proveedor(request):
-    
-    return render(request, 'busqueda_proveedor.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'busqueda_proveedor.html', {'url': avatar.imagen.url})
 
 class BuscarProveedor(LoginRequiredMixin, ListView):
     model = Proveedores
@@ -449,12 +454,12 @@ def registrar_user(request):
         return render(request, 'registro_usuario.html', {'formulario': formulario})
 
 def registro_ventas(request):
-
-    return render(request, 'registrar_venta.html')
+    avatar = Avatar.objects.get(user=request.user)
+    return render(request, 'registrar_venta.html', {'url': avatar.imagen.url})
 
 def exitoventas(request):
-
-    return render(request, 'exito_venta.html')
+    avatar = Avatar.objects.get(user=request.user) 
+    return render(request, 'exito_venta.html', {'url': avatar.imagen.url})
 
 # class Ingreso_venta(LoginRequiredMixin, CreateView):
 
@@ -479,6 +484,7 @@ class BuscaClienteVenta(LoginRequiredMixin, ListView):
             return (object_list)
 
 def ingreso_venta(request, pk):
+    avatar = Avatar.objects.get(user=request.user) 
 
     cliente = Cliente.objects.get(pk=pk)
 
@@ -493,7 +499,7 @@ def ingreso_venta(request, pk):
             venta.save()
             venta.venta.set(datos['venta'])
             venta.save()
-            return render(request, 'exito_venta.html', {'venta':venta})
+            return render(request, 'exito_venta.html', {'venta':venta}, {'url': avatar.imagen.url})
         
         return render(request,'nueva_venta.html',{'form':form,'mensaje':"Formulario invalido.",'pk':pk,'cliente':cliente})
     
@@ -503,6 +509,7 @@ def ingreso_venta(request, pk):
 
         
 def form_contacto(request):
+    
 
     if request.method == 'POST':
 
@@ -513,9 +520,10 @@ def form_contacto(request):
 
         send_mail(asunto, mensaje, email_from, destinatario)
 
-        return render(request, 'exito_contacto.html')
+        return render(request, 'exito_contacto.html')#, {'url': avatar.imagen.url})
     
-    return render(request, 'formulario_contacto.html')
+    return render(request, 'formulario_contacto.html')#, {'url': avatar.imagen.url})
+
 
 
 
