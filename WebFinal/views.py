@@ -524,6 +524,11 @@ def form_contacto(request):
     
     return render(request, 'formulario_contacto.html')#, {'url': avatar.imagen.url})
 
-
+def nosotros(request):
+    try:
+        avatar = Avatar.objects.get(user=request.user)
+        return render(request, 'nosotros.html', {'url': avatar.imagen.url})
+    except:
+       return render(request, 'nosotros.html')
 
 

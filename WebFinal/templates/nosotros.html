@@ -1,0 +1,39 @@
+{% extends 'inicio.html' %}
+
+{% load static %}
+
+{% block secciones %}
+    <style>
+        .contenedor {
+            display: flex;
+        }
+
+        .text {
+            padding-left: 10px;
+
+        }
+    </style>
+
+    <h1> 
+        
+        </h1></br>
+
+    
+        <div class="contenedor">
+    <img src="{% static 'imagen4.jpg' %}"  width="400" height="300" />
+    
+        
+        <div class="text"> 
+            <h1> 
+        Nosotros
+        </h1></br> <p>En Sillones Gattone, creemos que los muebles deben ser un lugar para relajarse, un lugar para descansar y un lugar para sentirse cómodo. Nos comprometemos a crear los sillones de mejor calidad que pueda encontrar, con los más altos estándares de artesanía y diseño, y lo hemos estado haciendo durante años.
+        </p>
+        <p>No sólo fabricamos sillones, sino que los mejoramos. Estamos orgullosos de ser una empresa que ha crecido a lo largo de los años, desde sus humildes comienzos como una pequeña tienda en las afueras de la ciudad hasta su estatus actual como una de las marcas más respetadas en su campo.
+        </p>
+        <p>Nuestro crecimiento permanente está impulsado por nuestro compromiso con la calidad: sólo utilizamos materiales y mano de obra de la más alta calidad para nuestros productos, buscando siempre la excelencia en todos los aspectos de la producción. Como resultado, nuestros clientes pueden estar seguros de que reciben exactamente lo que desean con la satisfacción de "EL CONFORT DE ESTAR BIEN".
+        </p></div>
+     
+    </div>
+    <img src="{% static 'magen5.jpg' %}"  width="400" height="300" />
+
+{% endblock %}

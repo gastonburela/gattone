@@ -57,4 +57,5 @@ urlpatterns = [
     path('buscar_cliente_venta/', BuscaClienteVenta.as_view(), name='buscarclienteventa'),
     path('exito_venta/', exitoventas, name='exitoventa'),
     path('contacto/', form_contacto, name='contactenos'),
+    path('nosotros/', nosotros, name='nosotros'),
 ]
