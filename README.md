@@ -16,7 +16,6 @@ La plataforma cuenta con tres niveles de  acceso  y con ello a diferentes tipo d
 ------------------------------------------------------------
 ACCESO CLIENTESR
 
-* Creacion de usuario
 * Visualizacion de Produectos
 
 
