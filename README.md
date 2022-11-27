@@ -30,7 +30,7 @@ MIEMBROS DE TERCER  NIVEL: aAREA DE RRHH Y DIRECCION GENERAL
 * Creacion,Modificacion,Eliminacion de Proveedores
 * Creacion,Modificacion,Eliminacion de Productos
 * Creacion,Modificacion,Eliminacion de  Usuarios
-* Creacion,Modificacion,Eliminacion de Productos
+* Creacion,Modificacion,Eliminacion de Empelados
 
 ![cubik-icono-muebles](https://user-images.githubusercontent.com/116232046/204142434-63bb5a2c-d750-4dfc-ad53-fa3265be1af1.png)
 
