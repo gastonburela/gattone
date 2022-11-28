@@ -141,5 +141,5 @@ EMAIL_HOST='mail.smallproyecciones.com.ar'
 EMAIL_USE_SSL=True
 EMAIL_PORT=465
 EMAIL_HOST_USER='gattone@smallproyecciones.com.ar'
-EMAIL_HOST_PASSWORD=''
+EMAIL_HOST_PASSWORD='gattoneCoder3'
 

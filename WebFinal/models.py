@@ -46,9 +46,9 @@ class Productos(models.Model):
 class Ventas(models.Model):
 
     cliente = models.ForeignKey(Cliente,null=True,blank=True, on_delete=models.CASCADE)
-    venta = models.ManyToManyField(Productos)
+    venta = models.ManyToManyField(Productos, verbose_name="Seleccione Productos a vender:")
     fecha = models.DateField(auto_now=True)
-    detalle = models.TextField(max_length=254)
+    detalle = models.TextField(max_length=254, verbose_name="Ingrese el detalle de la venta:")
 
 #Avatares
 class Avatar(models.Model):

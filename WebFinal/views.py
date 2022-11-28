@@ -484,8 +484,7 @@ class BuscaClienteVenta(LoginRequiredMixin, ListView):
             return (object_list)
 
 def ingreso_venta(request, pk):
-    avatar = Avatar.objects.get(user=request.user) 
-
+   
     cliente = Cliente.objects.get(pk=pk)
 
     if request.method == 'POST':
@@ -499,7 +498,7 @@ def ingreso_venta(request, pk):
             venta.save()
             venta.venta.set(datos['venta'])
             venta.save()
-            return render(request, 'exito_venta.html', {'venta':venta}, {'url': avatar.imagen.url})
+            return render(request, 'exito_venta.html', {'venta':venta})
         
         return render(request,'nueva_venta.html',{'form':form,'mensaje':"Formulario invalido.",'pk':pk,'cliente':cliente})
     

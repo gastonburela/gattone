@@ -37,9 +37,9 @@
                         
                         {% endif %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'lista_productos' %}">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'contactenos' %}">Contactenos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Empresa</a></li>
-                        
+                                                
                         {% if request.user.is_authenticated %}
                             <li class="nav-item">
                                 

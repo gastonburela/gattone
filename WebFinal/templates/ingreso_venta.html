@@ -4,14 +4,15 @@
 
 {% block secciones %}
 
-
+<div>
+    <center>
     {% if object_list %}
 
        {% for cliente in object_list %}
             
             <h4>Registrar nueva venta para cliente: {{cliente.nombre}}</h4>
 
-           <a href="{% url 'nuevaventa' cliente.pk %}">Nueva venta</a>
+           <a class="btn-info" href="{% url 'nuevaventa' cliente.pk %}">Nueva venta</a>
         {% endfor %}
       
     {% else %}
@@ -19,11 +20,12 @@
         <h4>Cliente no encontrado</h4>
     
     {% endif %}
-    
-    
-    <button><a href="{% url 'busqueda_cliente'  %}" >Volver a buscar</a><br></button>
+</center>
+</div></br>
+<div>
+    <button><a href="{% url 'buscarclienteventa'  %}" >Buscar otro cliente</a><br></button>
     <button><a href="{% url 'lista_clientes'  %}" >Volver a clientes</a></button>
+</div>
 
-
-
+</center>
 {% endblock %}
