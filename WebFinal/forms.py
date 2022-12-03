@@ -19,7 +19,7 @@ class Formulario_empleado(forms.ModelForm):
     # cargo = forms.CharField(max_length=30)
     class Meta:
         model = Empleado
-        fields = ("nombre","apellido","area","cargo")
+        fields = ('__all__')
 
 
 class Formulario_proveedores(forms.ModelForm):
