@@ -3,27 +3,28 @@
 {% load static %}
 
 {% block secciones %}
-
+<div><center>
 <a class="btn btn-success" href="{% url 'form_cliente' %}">Crear Cliente</a>
 
 
 <a class="btn btn-primary" href="{% url 'busqueda_cliente' %}">Buscar Cliente</a>
-
+</center>
+</div><center>
     
     <h1> 
         
         Lista de Clientes: </h1>
 
     <ul>
-
+        
         {% for cliente in clientes %}
-        <li>
-            <a href="{% url 'detalle_cliente' cliente.id %}">
+        
+        <h4> <a href="{% url 'detalle_cliente' cliente.id %}">
 
             {{cliente}}
 
             </a>
-        </li>
+        </h4>
         <div>
             <a class="btn btn-danger btn-sm" href="{% url 'borracliente' cliente.id %}">Eliminar</a>
            
@@ -35,5 +36,5 @@
         {% endfor %}
 
     </ul>
-
+</center>
 {% endblock %}

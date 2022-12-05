@@ -10,7 +10,7 @@
 
        {% for cliente in object_list %}
             
-            <h4>Registrar nueva venta para cliente: {{cliente.nombre}}</h4>
+            <h4>Registrar nueva venta para cliente: {{cliente.nombre}}&nbsp;{{cliente.apellido}}</h4>
 
            <a class="btn-info" href="{% url 'nuevaventa' cliente.pk %}">Nueva venta</a>
         {% endfor %}
@@ -23,7 +23,7 @@
 </center>
 </div></br>
 <div>
-    <button><a href="{% url 'buscarclienteventa'  %}" >Buscar otro cliente</a><br></button>
+    <button><a href="{% url 'registroventas' %}" >Buscar otro cliente</a><br></button>
     <button><a href="{% url 'lista_clientes'  %}" >Volver a clientes</a></button>
 </div>
 

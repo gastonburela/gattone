@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block secciones %}
-
+<center>
 <form action="{% url 'form_cliente' %}" method="POST">{% csrf_token %}
 
     {{form.as_p}}
@@ -14,6 +14,6 @@
 
 
 </form>
-
+</center>
 {% endblock %}
 

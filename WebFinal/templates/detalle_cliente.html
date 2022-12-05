@@ -3,10 +3,11 @@
 {% load static %}
 
 {% block secciones %}
-
-<h2>Detalle del cliente:</h2>
-
+<div>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detalle del cliente:</h2>
+</div>
 <div class="container">
+  <h5>
     <div class="row">
       <div class="col-1">
      <b>Nombre:</b> 
@@ -22,6 +23,13 @@
         {{cliente.apellido}}
         </div>
         <div class="row">
+          <div class="col-1">
+          <b>DNI:</b> 
+          </div>
+          <div class="col-1">
+          {{cliente.dni}}
+          </div>
+        <div class="row">
             <div class="col-1">
             <b>Telefono:</b> 
             </div>
@@ -34,13 +42,15 @@
               </div>
               <div class="col-5">
               &nbsp;{{cliente.direccion}}
-              </div>        
+              </div> 
+    </h5>     
   </div>
 </div>
 <div>
+  <center>
 </br><a class="btn btn-primary btn-sm" href="{% url 'lista_clientes'  %}" >Volver</a>
 </div>
-
+</center>
 
 {% endblock %}
 

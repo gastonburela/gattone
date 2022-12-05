@@ -6,7 +6,7 @@
 
 <form action="{% url 'nuevaventa' pk %}" method="POST">{% csrf_token %}
 
-    <h4>Ingreso nueva venta cliente: {{cliente.nombre}}</h4>
+    <h4>Ingreso nueva venta cliente: {{cliente.nombre}}&nbsp;{{cliente.apellido}}</h4>
     {{form.as_p}}
 
     <input type="submit" value='Cargar venta'/>
